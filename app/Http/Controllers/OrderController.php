@@ -40,7 +40,7 @@ class OrderController extends Controller
 
     public function fruits(Request $req , Order $order){
 
-        dd($req->all() , $order );
+        
         $order->fruits()->attach($req->fruit);
 
         return redirect()->back();

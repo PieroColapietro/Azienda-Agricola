@@ -15,7 +15,7 @@ class CreateFruitsTable extends Migration
     {
         Schema::create('fruits', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->default(1);
             $table->timestamps();
         });
     }
