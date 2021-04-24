@@ -20,7 +20,7 @@
 
                         <hr>
                         <img src="/img/verdura.jpg" class="img-fluid" alt="...">
-                        <div class="card-body">
+                        <div class="card-body">        
                             <p class="card-text">Interamente coltivati da noi nelle nostre serre</p>
                             <hr>
                         </div>
