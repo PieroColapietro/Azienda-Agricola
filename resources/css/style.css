@@ -1,0 +1,51 @@
+:root{
+    --main: #407040ee;
+    --second: #357235;
+}
+
+.masthead{
+    background-image: url(/img/tractor.png);
+    background-size:cover;
+    font-family: 'Castoro', serif;
+    color:#357235;
+}
+
+.navbar{
+    background-color:#407040de!important;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    font-family: 'Castoro', serif;
+}
+
+.card-middle{
+    border-radius: 20px;
+    background-color: #407040ee !important;
+    color: whitesmoke !important;
+    -webkit-box-shadow: -1px 0px 24px 2px rgba(0,0,0,0.74); 
+    box-shadow: -1px 0px 24px 2px rgba(0,0,0,0.74);
+}
+
+.footer , .subtitle , .accordion{
+    background-color: #407040de!important;
+}
+
+.accordion-button:focus{
+    box-shadow: none !important;
+}
+
+.btn-custom{
+    background-color: var(--second);
+    color:whitesmoke;
+    border: solid 1px whitesmoke;
+}
+
+.btn-custom:focus{
+    box-shadow: none !important;
+}
+
+.log{
+    height: 100%;
+    width: 100%;
+    background-color: #598359;
+}
