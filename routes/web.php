@@ -28,3 +28,4 @@ Route::post('/contatti/submit',[OrderController::class , 'submit'])->name('conta
 Route::get('order/edit/{order}',[OrderController::class , 'edit'])->name('order.edit');
 Route::post('/order/update/{order}',[OrderController::class , 'update'])->name('order.update');
 Route::delete('/order/destroy/{order}',[OrderController::class , 'destroy'])->name('order.destroy');
+Route::get('/location',[OrderController::class , 'location'])->name('location');

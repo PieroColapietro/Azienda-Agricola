@@ -3,7 +3,7 @@
         <a class="navbar-brand ms-2 text-light" href="{{ route('homepage') }}">Home</a>
         <a class="navbar-brand text-light" href="#">Chi Siamo</a>
         <a class="navbar-brand text-light" href="#">L'azienda</a>
-        <a class="navbar-brand text-light" href="#">Dove siamo</a>
+        <a class="navbar-brand text-light" href="{{route('location')}}">Dove siamo</a>
         <button class="navbar-toggler" style="border-color:#fff;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-ellipsis-h" style="color:#fff; font-size:20px;"></i>

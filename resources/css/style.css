@@ -30,6 +30,10 @@
     background-color: #407040de!important;
 }
 
+.location{
+    background-color: #437343 !important;
+}
+
 .accordion-button:focus{
     box-shadow: none !important;
 }
