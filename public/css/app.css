@@ -10854,7 +10854,7 @@ textarea.form-control-lg {
     box-shadow: -1px 0px 24px 2px rgba(0,0,0,0.74);
 }
 
-.footer , .subtitle , .accordion{
+.footer , .subtitle , .accordion ,.contatti{
     background-color: #407040de!important;
 }
 
@@ -10876,5 +10876,21 @@ textarea.form-control-lg {
     height: 100%;
     width: 100%;
     background-color: #598359;
+}
+
+@media screen and (max-width: 570px){
+    .title{
+        margin-top:100px !important;;
+    }
+} 
+
+.navbar-toggler{
+    box-shadow:none !important;
+}
+
+@media screen and (max-width: 570px){
+    .card-home{
+       box-sizing: content-box !important;
+    }
 }
 

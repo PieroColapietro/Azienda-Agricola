@@ -1,12 +1,12 @@
 <x-layout>
 
     <header class="masthead pt-4">
-        <h1 class="display-3 ms-5 mt-5">Azienda Agricola</h1>
+        <h1 class="display-3 ms-5 mt-5 title">Azienda Agricola</h1>
         <h2 class="mt-3 ms-5">Da sempre al vostro servizio</h2>
         <div class="container container-fluid d-flex">
             <div class="col-12">
-                <div class="row text-start">
-                    <div class="col-3 col-md-3 col-sm-8 card-middle bg-white p-4 mt-5 ms-5 mb-5">
+                <div class="row text-start justify-content-center">
+                    <div class="card-home col-6 col-md-4 card-middle p-4 mt-5 ms-5 mb-5">
                         <h3>Da oggi puoi ordinare la tua spesa comodamente da casa tua!</h3>
                         <hr>
                         <img src="/img/frutta.jpg" class="img-fluid" alt="...">
@@ -15,7 +15,7 @@
                             <hr>
                         </div>
                     </div>
-                    <div class="col-3 col-md-3 col-sm-8 card-middle bg-white p-4 mt-5 ms-5 mb-5">
+                    <div class="card-home col-6 col-md-4 card-middle p-4 mt-5 ms-5 mb-5">
                         <h3>Da anni coltiviamo con passione i nostri prodotti</h3>
 
                         <hr>
@@ -25,7 +25,16 @@
                             <hr>
                         </div>
                     </div>
-                    <div class="col-3 col-md-3 col-sm-8 card-middle bg-white p-4 mt-5 ms-5 mb-5">
+                    <div class="card-home col-6 col-md-4 card-middle p-4 mt-5 ms-5 mb-5">
+                        <h3>Verdura fresca di giornata sulla tua tavola</h3>
+                        <hr>
+                        <img src="/img/verdura2.jpg" class="img-fluid" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">Frutta e verdura raccolti freschi ogni giorno</p>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="card-home col-6 col-md-4 card-middle p-4 mt-5 ms-5 mb-5">
                         <h3>Verdura fresca di giornata sulla tua tavola</h3>
                         <hr>
                         <img src="/img/verdura2.jpg" class="img-fluid" alt="...">
@@ -53,19 +62,19 @@
                             <div class="carousel-item active">
                                 <img src="/img/verdura3.jpg" class="d-block w-100 img-thumbnail" alt="">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <span class="mt-3 p-2 fs-4 subtitle">Clicca in alto per scoprire di più</span>
+                                    
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="/img/verdura4.jpg" class="d-block w-100 img-thumbnail" alt="">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <span class="mt-3 p-2 fs-4 subtitle">Ordinali ora direttamente da casa!</span>
+                                    
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <img src="/img/frutta2.jpg" class="d-block w-100 img-thumbnail" alt="">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <span class="mt-3 p-2 subtitle fs-4">Compila il form!<span>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -152,9 +161,58 @@
                 </div>
             </div>
         </div>
+        
     </header>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-4 mt-5 mb-5">
 
+                <h3 class="mb-5 mt-5">Servono info? Compila il form!</h3>
+                <form method="POST" action="{{ route('contatti.submit') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group row">
+                        <label for="inputuser" class="col-sm-4 col-form-label">Inserisci il tuo nome</label>
+                        <div class="col-sm-10">
+                            <input name="user" type="user" class="form-control" id="inputuser" placeholder="user">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-2">
+                        <label for="inputmessage" class="col-sm-4 col-form-label">Inserisci la richiesta</label>
+                        <div class="col-sm-10">
+                            <input name="message" type="message" class="form-control" id="inputmessage" placeholder="message">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-2">
+                        <label for="inputemail" class="col-sm-4 col-form-label">Inserisci la tua email</label>
+                        <div class="col-sm-10">
+                            <input name="email" type="email" class="form-control" id="inputemail" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-2">
+                        <label for="inputnumber" class="col-sm-4 col-form-label">Inserisci il tuo numero</label>
+                        <div class="col-sm-10">
+                            <input name="number" type="number" class="form-control" id="inputnumber"
+                                placeholder="number">
+                        </div>
+                    </div>
+                    <div class="form-group row mt-3">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Invia</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group row mt-3">
+                    @if (session('message'))
+                    <div class="alert alert-success">
+                        {{session('message')}}
+                    </div>
+                        
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

@@ -78,7 +78,7 @@ class OrderController extends Controller
             ['name' => 'required|min:3|max:20',
             'address' => 'required|min:3|max:50',
             'number' => 'required|min:3|max:20',
-            'email' => 'required|min:3|max:20'],
+            'email' => 'required|min:3|max:50'],
 
             ['name.required' => 'Inserisci un nome (obbligatorio)',
             'name.min' => 'Il nome deve avere almeno 3 caratteri (obbligatorio)',
@@ -94,7 +94,7 @@ class OrderController extends Controller
             
             'email.required' => 'Inserisci una email valida (obbligatorio)',
             'email.min' => 'La tua email deve avere almeno 3 caratteri',
-            'email.max' => 'La tua email deve avere massimo 20 caratteri'],
+            'email.max' => 'La tua email deve avere massimo 50 caratteri'],
         );
 
         $order = Order::create([

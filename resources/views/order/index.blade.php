@@ -28,7 +28,7 @@
                                 <form method="POST" action="{{route('order.destroy',compact('order'))}}">
                                 @csrf
                                 @method('delete')    
-                                <button type="submit" class="btn btn-custom">Cancella</button>
+                                <button type="submit" class="btn btn-custom mt-2">Cancella</button>
                                 </form>
                             
                             </div>
