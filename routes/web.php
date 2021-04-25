@@ -23,3 +23,5 @@ Route::post('/order/store',[OrderController::class , 'store'])->name('order.stor
 Route::get('/order/index',[OrderController::class , 'index'])->name('order.index');
 Route::get('/order/show/{order}',[OrderController::class , 'show'])->name('order.show');
 Route::post('/order/fruits/{order}',[OrderController::class , 'fruits'])->name('order.fruits');
+Route::get('/contatti',[OrderController::class , 'contatti'])->name('contatti');
+Route::post('/contatti/submit',[OrderController::class , 'submit'])->name('contatti.submit');

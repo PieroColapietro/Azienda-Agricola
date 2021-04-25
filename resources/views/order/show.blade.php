@@ -14,6 +14,26 @@
                             <p class="card-text">Email: {{ $order->email }}</p>
                             <p class="card-text">Numero: {{ $order->number }}</p>
                             <p class="card-text">Creato da: {{ $order->user->name }}</p>
+                            <form method="POST" action="{{ route('order.fruits', compact('order')) }}">
+                                @csrf
+                                <select name="fruit">
+                                    @foreach ($fruits as $fruit)
+            
+                                        <option value="{{ $fruit->id }}">{{ $fruit->name }}</option>
+                                    @endforeach
+                                </select> <br>
+                                <button type="submit" class="btn btn-custom mt-2 mb-2">Aggiungi frutto</button>
+                            </form>
+
+                            
+                            <ul>
+                                @foreach ($order->fruits as $fruit)
+                                    <li>Il frutto scelto: {{ $fruit->name }}</li>
+            
+                                @endforeach
+                                
+                            </ul>
+                        
                             <p class="card-text">Creato il: {{ $order->created_at->format('d-m-Y / H:i:s') }}</p>
                             <p class="card-text">Ultima modifica: {{ $order->updated_at->format('d-m-Y / H:i:s') }}
                             </p>

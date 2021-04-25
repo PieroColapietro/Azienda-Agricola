@@ -5,20 +5,6 @@
             <div class="col-12 col-md-6 offset-md-4 mt-5 mb-5">
 
                 <h1 class="mb-5 mt-5">Cosa vuoi ordinare?</h1>
-
-                <form method="POST" action="{{ route('order.fruits', ['order']) }}">
-                    @csrf
-                    <select name="fruit">
-                        @foreach ($fruits as $fruit)
-
-                            <option value="{{ $fruit->id }}">{{ $fruit->name }}</option>
-                        @endforeach
-                    </select>
-                </form>
-               
-                <button type="submit">Aggiungi frutto</button>
-                
-
                 <form method="POST" action="{{ route('order.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row mt-3">

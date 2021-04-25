@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Fruit;
 use App\Models\Order;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
 {
+    public function contatti(){
+        return view('contatti');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -30,11 +35,22 @@ class OrderController extends Controller
 
     public function create(Order $order)
     {
-        $fruits = Fruit::all();
-        
-        return view('order.create', compact('order' , 'fruits'));
+        return view('order.create');
     }
 
+    public function submit(Request $req){
+
+        $user = $req->input('user');
+        $message = $req->input('message');
+        $email = $req->input('email');
+        $number = $req->input('number');
+
+        $contact = compact('user','message','number');
+        
+        Mail::to($email)->send(new ContactMail($contact));
+
+        return redirect(route('contatti'))->with('message', 'Grazie! La tua richiesta è stata inoltrata!');
+    }
 
 
 
@@ -76,7 +92,9 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('order.show', compact('order'));
+        $fruits = Fruit::all();
+        
+        return view('order.show', compact('order' , 'fruits'));
     }
 
     /**

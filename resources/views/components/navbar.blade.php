@@ -15,7 +15,7 @@
                         <a class="nav-link text-light me-2" aria-current="page"
                             href="{{ route('order.create') }}">Ordina</a>
                     </li>
-                    <a class="nav-link text-light me-5" href="#">Contattaci</a>
+                    <a class="nav-link text-light me-5" href="{{route('contatti')}}">Contattaci</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light me-5" href="{{ route('order.index') }}">I tuoi ordini</a>

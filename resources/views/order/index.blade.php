@@ -15,13 +15,6 @@
                                 <p class="card-text">Email: {{ $order->email }}</p>
                                 <p class="card-text">Numero: {{ $order->number }}</p>
                                 <p class="card-text">Creato da: {{ $order->user->name }}</p>
-                                <ul>
-                                    @foreach ($order->fruits as $fruit)
-                                        <li>{{ $fruit->name }}</li>
-                
-                                    @endforeach
-                                    
-                                </ul>
                                 <p class="card-text">Creato il: {{ $order->created_at->format('d-m-Y / H:i:s') }}</p>
                                 <p class="card-text">Ultima modifica:
                                     {{ $order->updated_at->format('d-m-Y / H:i:s') }}</p>
