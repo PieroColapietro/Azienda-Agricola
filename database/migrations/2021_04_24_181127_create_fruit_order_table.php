@@ -16,9 +16,9 @@ class CreateFruitOrderTable extends Migration
         Schema::create('fruit_order', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('fruit_id');
-            $table->foreign('fruit_id')->references('id')->on('fruits');  
+            $table->foreign('fruit_id')->references('id')->on('fruits')->onDelete('cascade');  
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');  
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade'); 
         });
     }
 

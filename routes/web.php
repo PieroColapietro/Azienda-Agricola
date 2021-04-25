@@ -25,3 +25,6 @@ Route::get('/order/show/{order}',[OrderController::class , 'show'])->name('order
 Route::post('/order/fruits/{order}',[OrderController::class , 'fruits'])->name('order.fruits');
 Route::get('/contatti',[OrderController::class , 'contatti'])->name('contatti');
 Route::post('/contatti/submit',[OrderController::class , 'submit'])->name('contatti.submit');
+Route::get('order/edit/{order}',[OrderController::class , 'edit'])->name('order.edit');
+Route::post('/order/update/{order}',[OrderController::class , 'update'])->name('order.update');
+Route::delete('/order/destroy/{order}',[OrderController::class , 'destroy'])->name('order.destroy');

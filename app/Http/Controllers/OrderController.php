@@ -73,6 +73,30 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate(
+            $request,
+            ['name' => 'required|min:3|max:20',
+            'address' => 'required|min:3|max:50',
+            'number' => 'required|min:3|max:20',
+            'email' => 'required|min:3|max:20'],
+
+            ['name.required' => 'Inserisci un nome (obbligatorio)',
+            'name.min' => 'Il nome deve avere almeno 3 caratteri (obbligatorio)',
+            'name.max' => 'Il nome deve avere massimo 20 caratteri (obbligatorio)',
+            
+            'address.required' => 'Inserisci un indirizzo (obbligatorio)',
+            'address.min' => 'Il tuo indirizzo deve avere almeno 3 caratteri (obbligatorio)',
+            'address.max' => 'Il tuo indirizzo deve avere massimo 50 caratteri (obbligatorio)',
+            
+            'number.required' => 'Inserisci un numero di telefono (obbligatorio)',
+            'number.min' => 'Il tuo numero deve avere almeno 3 caratteri (obbligatorio)',
+            'number.max' => 'Il tuo numero deve avere massimo 20 caratteri (obbligatorio)',
+            
+            'email.required' => 'Inserisci una email valida (obbligatorio)',
+            'email.min' => 'La tua email deve avere almeno 3 caratteri',
+            'email.max' => 'La tua email deve avere massimo 20 caratteri'],
+        );
+
         $order = Order::create([
             'name'=>$request->name,
             'address'=>$request->address,
@@ -105,7 +129,8 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        //
+
+        return view('order.edit',compact('order'));
     }
 
     /**
@@ -117,7 +142,13 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->name = $request->name;
+        $order->address = $request->address;
+        $order->email = $request->email;
+        $order->number = $request->number;
+
+        $order->save();
+        return redirect(route('order.index'));
     }
 
     /**
@@ -127,7 +158,9 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Order $order)
-    {
-        //
+    { 
+        $order->delete();
+
+        return redirect(route('order.index'));
     }
 }

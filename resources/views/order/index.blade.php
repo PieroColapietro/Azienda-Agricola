@@ -18,8 +18,19 @@
                                 <p class="card-text">Creato il: {{ $order->created_at->format('d-m-Y / H:i:s') }}</p>
                                 <p class="card-text">Ultima modifica:
                                     {{ $order->updated_at->format('d-m-Y / H:i:s') }}</p>
+                                    
                                 <button class="btn btn-custom"><a class="text-light" style="text-decoration:none"
                                         href="{{ route('order.show', compact('order')) }}">Dettaglio</a></button>
+                                <button class="btn btn-custom"><a class="text-light" style="text-decoration:none"
+                                    href="{{ route('order.edit',compact('order')) }}">Modifica</a></button>
+
+                                
+                                <form method="POST" action="{{route('order.destroy',compact('order'))}}">
+                                @csrf
+                                @method('delete')    
+                                <button type="submit" class="btn btn-custom">Cancella</button>
+                                </form>
+                            
                             </div>
                         </div>
                     </div>
